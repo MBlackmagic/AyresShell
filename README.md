@@ -77,20 +77,24 @@ Use `HELP` to view the full list of available commands.
 
 ## 🧭 Built-in Commands
 
-| Command                     | Description                                                |
-|----------------------------|------------------------------------------------------------|
-| `DIR`                      | Lists files in the file system                             |
-| `TYPE <file>`              | Displays the contents of a file                            |
-| `DEL <file>`               | Deletes a file                                             |
-| `REN <a> <b>`              | Renames a file                                             |
-| `MV <a> <b>`               | Moves a file to another folder                             |
-| `MKDIR <folder>`           | Creates a directory                                        |
-| `RMDIR <folder>`           | Removes an empty directory                                 |
-| `CD <folder>`              | Changes current directory (supports `..` and `/`)          |
-| `CLS`                      | Clears the screen                                          |
-| `HELP`                     | Displays the list of available commands                   |
-| `FORMAT`                   | Formats the file system (confirm with `S`)                 |
-| `JSONSET <path> <key> "<value>"` | Edits a field inside a JSON file                    |
+| Command                          | Description                                                |
+|----------------------------------|------------------------------------------------------------|
+| `DIR` or `LS`                    | Lists files in the file system                             |
+| `TYPE <file>` or `CAT` <file>    | Displays the contents of a file                            |
+| `DEL <file>` or `RM`             | Deletes a file                                             |
+| `REN <a> <b>`                    | Renames a file                                             |
+| `MV <a> <b>`                     | Moves a file to another folder                             |
+| `MKDIR <folder>`                 | Creates a directory                                        |
+| `RMDIR <folder>`                 | Removes an empty directory                                 |
+| `CD <folder>`                    | Changes current directory (supports `..` and `/`)          |
+| `CLS` or `CLEAR`                 | Clears the screen                                          |
+| `HELP` or `MAN`                  | Displays the list of available commands                    |
+| `FORMAT`                         | Formats the file system (confirm with `S`)                 |
+| `UPTIME`                         | Uptime of the ESP                                          |
+| `FREE`                           | Free memory heap                                           |
+| `CHIPINFO`                       | Chipinfo of the ESP                                        |
+| `VERSION`                        | Version of the Firmware                                    |
+| `JSONSET <path> <key> "<value>"` | Edits a field inside a JSON file                           |
 
 ---
 

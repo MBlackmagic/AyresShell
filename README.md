@@ -123,5 +123,3 @@ Distributed under the MIT license.
 Free to use, modify, and share.
 
 ---
-
-> 📘 [Read this in Spanish → README.es.md](README.es.md)

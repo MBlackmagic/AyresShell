@@ -28,6 +28,7 @@ void createDir(fs::FS &fs, const char * pathInput);
 void removeDir(fs::FS &fs, const char * pathInput);
 void clearScreen();
 void help();
+void reboot();
 void handleSerialCommands();
 
 // --- JSON SUPPORT FUNCTIONS ---

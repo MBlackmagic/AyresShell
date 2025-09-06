@@ -6,6 +6,7 @@
 
 **AyresShell** is an interactive serial console for ESP32 that lets you execute administrative, debugging, file management, and JSON editing commands directly from the serial monitor.  
 Created by [Daniel Salgado](https://github.com/ayresnet), it is compatible with both Arduino IDE and PlatformIO.
+Translation and added functions by Mehmet Ersöz.
 
 ---
 

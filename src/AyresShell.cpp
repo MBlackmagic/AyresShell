@@ -1,5 +1,5 @@
 /*
- * AyresShell v1.0.0 (English Version)
+ * AyresShell v1.0.1 (English Version)
  * --------------------------------------------------------
  * Interactive serial console for ESP32
  * Developed by Daniel Cristian Salgado - AyresNet
@@ -246,6 +246,8 @@ void help() {
   Serial.println("REBOOT                     - Reboots ESP32");
   Serial.println("UPTIME                     - Show uptime since boot");
   Serial.println("FREE                       - Show free heap (and PSRAM if available)");
+  Serial.println("CHIPINFO                   - Show ESP32 hardware information");
+  Serial.println("VERSION                    - Show firmware version");
   Serial.println("HELP & MAN                 - Show this help message");
   Serial.println();
 }
@@ -320,13 +322,23 @@ void handleSerialCommands() {
         listDir(LittleFS, currentDir.c_str());
       }
 
-      else if (upperInput.startsWith("TYPE ") || upperInput.startsWith("CAT ")) {
-        String path = input.substring(5);
+      else if (upperInput.startsWith("TYPE ")) {
+        String path = input.substring(4);
         readFile(LittleFS, path.c_str());
       }
 
-      else if (upperInput.startsWith("DEL ") || upperInput.startsWith("RM ")) {
+       else if ( upperInput.startsWith("CAT ")) {
+        String path = input.substring(3);
+        readFile(LittleFS, path.c_str());
+      }
+
+      else if (upperInput.startsWith("DEL ")) {
         String path = input.substring(4);
+        deleteFile(LittleFS, path.c_str());
+      }
+
+        else if (upperInput.startsWith("RM ")) {
+        String path = input.substring(3);
         deleteFile(LittleFS, path.c_str());
       }
 
@@ -423,6 +435,25 @@ void handleSerialCommands() {
         Serial.printf("Free PSRAM: %d bytes\n", ESP.getFreePsram());
       #endif
       }
+
+      else if (upperInput == "CHIPINFO") {
+        Serial.println("Chip Information:");
+        Serial.printf("  Model: %s\n", ESP.getChipModel());
+        Serial.printf("  Cores: %d\n", ESP.getChipCores());
+        Serial.printf("  Revision: %d\n", ESP.getChipRevision());
+        Serial.printf("  CPU Frequency: %d MHz\n", ESP.getCpuFreqMHz());
+        Serial.printf("  Flash Size: %d MB\n", ESP.getFlashChipSize() / (1024 * 1024));
+        Serial.printf("  Heap Free: %d bytes\n", ESP.getFreeHeap());
+      #if defined(CONFIG_SPIRAM_SUPPORT) && CONFIG_SPIRAM_SUPPORT
+        Serial.printf("  PSRAM Free: %d bytes\n", ESP.getFreePsram());
+      #endif
+      }
+
+      else if (upperInput == "VERSION") {
+        Serial.print("Firmware: 1.0");
+        //Serial.println(FIRMWARE_VERSION); // Optional: Wenn du eine eigene Konstante definierst, z.B.:
+      }
+
 
       else if (input.length() > 0) {
         Serial.println("Unrecognized command. Type 'HELP'.");

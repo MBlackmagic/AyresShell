@@ -1,5 +1,5 @@
 {
-  "name": "AyresShell2",
+  "name": "AyresShell",
   "version": "1.0.1",
   "description": "AyresShell: a DOS-style serial shell for ESP32 to browse LittleFS, run built-ins, and edit JSON from the Serial Monitor.",
   "keywords": "shell,serial,esp32,console,cli,littlefs,filesystem,json,debug,tools",

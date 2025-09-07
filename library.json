@@ -1,15 +1,15 @@
 {
-  "name": "AyresShell",
-  "version": "1.0.0",
+  "name": "AyresShell2",
+  "version": "1.0.1",
   "description": "AyresShell: a DOS-style serial shell for ESP32 to browse LittleFS, run built-ins, and edit JSON from the Serial Monitor.",
   "keywords": "shell,serial,esp32,console,cli,littlefs,filesystem,json,debug,tools",
   "authors": [
-    { "name": "Daniel Salgado", "maintainer": true, "url": "https://github.com/ayresnet" },
+    { "name": "Daniel Salgado", "maintainer": true, "url": "https://github.com/MBlackmagic/AyresShell" },
     { "name": "AyresNet" }
   ],
   "license": "MIT",
   "homepage": "https://github.com/ayresnet/AyresShell",
-  "repository": { "type": "git", "url": "https://github.com/ayresnet/AyresShell.git" },
+  "repository": { "type": "git", "url": "https://github.com/MBlackmagic/AyresShell/tree/main" },
   "frameworks": "arduino",
   "platforms": ["espressif32"],
   "headers": ["AyresShell.h"],
